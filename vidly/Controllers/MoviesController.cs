@@ -35,6 +35,12 @@ namespace vidly.Controllers
                 return HttpNotFound();
             return View(movie);
         }
+        
+        public ActionResult New()
+        {
+            return View();
+        }
+
         //public ActionResult Index(int? pageIndex, string sortBy)
         //{
         //    if (!pageIndex.HasValue)
