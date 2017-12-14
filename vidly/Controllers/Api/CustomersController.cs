@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Data.Entity;
 using vidly.Models;
 
 namespace vidly.Controllers.Api
@@ -20,7 +21,7 @@ namespace vidly.Controllers.Api
         // GET /api/customers
         public IEnumerable<Customer> GetCustomer()
         {
-            return _context.Customers.ToList();
+            return _context.Customers.Include(c => c.MembershipType).ToList();
         }
 
         // GET /api/customers/1
